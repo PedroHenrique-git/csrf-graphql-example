@@ -1,0 +1,24 @@
+{
+  "name": "csrf-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install-both": "npm run install-server && npm run install-client",
+    "server:dev": "npm run dev --prefix server",
+    "client:dev": "npm run dev --prefix client",
+    "server:prod": "npm run start --prefix server",
+    "client:prod": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "start": "concurrently \"npm run server:prod\" \"npm run client:prod\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

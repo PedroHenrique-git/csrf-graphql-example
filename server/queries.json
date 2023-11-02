@@ -1,0 +1,10 @@
+{
+  "fileUpload": {
+    "query": "mutation($file: File!) { saveFile(file: $file) }",
+    "variables": { "file": "null" }
+  },
+  "changeEmailMutation": {
+    "query": "mutation($email: String!) { changeEmail(newEmail: $email) }",
+    "variables": { "email": "null" }
+  }
+}
