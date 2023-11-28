@@ -1,4 +1,4 @@
-import express from "express";
+import { createServer } from "http";
 import { createYoga, createSchema, YogaInitialContext } from "graphql-yoga";
 import jwt from "jsonwebtoken";
 import fs from "node:fs";
@@ -6,8 +6,6 @@ import path from "node:path";
 import { useCookies } from "@whatwg-node/server-plugin-cookies";
 
 const PORT = process.env.PORT ?? 3000;
-
-const app = express();
 
 const secret = "7AoG8^%5e!ih71b:LG78j[C`:y`%#o";
 
@@ -98,12 +96,6 @@ const yoga = createYoga({
   plugins: [useCookies()],
 });
 
-app.use(yoga.graphqlEndpoint, yoga);
-
-app.get("/", (_, res) => {
-  return res.json({ message: "It works" });
-});
-
-app.listen(PORT, () => {
-  console.log(`application listening on http://localhost:${PORT}`);
+createServer(yoga).listen(PORT, () => {
+  console.info(`Server is running on http://localhost:${PORT}/graphql`);
 });
