@@ -4,7 +4,7 @@ This repository has a POC (proof of concept) on how a graphql server can be vuln
 
 ## Getting started
 
-This project requires node and npm to run.
+This project requires node and npm to run. <br />
 I recommend installing node using the [nvm](https://github.com/nvm-sh/nvm).
 
 ## Installing dependencies
@@ -15,7 +15,7 @@ I recommend installing node using the [nvm](https://github.com/nvm-sh/nvm).
 
     npm run start
 
-the graphql playground will be available on [http://localhost:3000/graphql](http://localhost:3000/graphql)
+the graphql playground will be available on [http://localhost:3000/graphql](http://localhost:3000/graphql) <br />
 the client will be available on [http://localhost:3001](http://localhost:3001)
 
 ## Testing the vunerability
