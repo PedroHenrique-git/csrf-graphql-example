@@ -1,0 +1,78 @@
+
+
+Security Report
+
+=====================================
+
+Rules: 
+https://docs.bearer.com/reference/rules [v0.20.1]
+
+Language    Default Rules  Custom Rules  Files  
+JavaScript  72             0             6      
+
+
+MEDIUM: Security misconfiguration detected (Helmet missing). [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_helmet_missing
+To ignore this finding, run: bearer ignore add 70e9326287d8ad9f85be33bd9e594846_0
+
+File: apollo-server-main/packages/integration-testsuite/src/apolloServerTests.ts:870
+
+ 870             this.app = express();
+
+MEDIUM: Security misconfiguration detected (Helmet missing). [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_helmet_missing
+To ignore this finding, run: bearer ignore add a6b6f98e2fd98f0a6aca5984e3e2b825_0
+
+File: apollo-server-main/packages/server/src/standalone/index.ts:49
+
+ 49   const app: express.Express = express();
+
+MEDIUM: Missing https protocol detected. [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_https_protocol_missing
+To ignore this finding, run: bearer ignore add 06f0bd16172ec4f59a178b4171693494_0
+
+File: apollo-server-main/packages/integration-testsuite/src/apolloServerTests.ts:2303
+
+ 2303         const fakeUsageReportingServer = http.createServer(async (_, res) => {
+ 2304           await writeResponsePromise;
+ 2305           res.writeHead(status);
+ 2306           res.end('Important text in the body');
+ 2307         });
+
+MEDIUM: Missing https protocol detected. [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_https_protocol_missing
+To ignore this finding, run: bearer ignore add 1394d873ecfd040be6491cb5c684e4df_0
+
+File: apollo-server-main/packages/server/src/standalone/index.ts:50
+
+ 50   const httpServer: http.Server = http.createServer(app);
+
+MEDIUM: Security misconfiguration detected (server fingerprinting). [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_reduce_fingerprint
+To ignore this finding, run: bearer ignore add 0d54f8c493a00b9122bd085f057b79d5_0
+
+File: apollo-server-main/packages/integration-testsuite/src/apolloServerTests.ts:870
+
+ 870             this.app = express();
+
+MEDIUM: Security misconfiguration detected (server fingerprinting). [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_reduce_fingerprint
+To ignore this finding, run: bearer ignore add 1c92a6ea62b579ab7bb620fd13355682_0
+
+File: apollo-server-main/packages/server/src/standalone/index.ts:49
+
+ 49   const app: express.Express = express();
+=====================================
+
+72 checks, 6 findings
+
+CRITICAL: 0
+HIGH: 0
+MEDIUM: 6 (CWE-693)
+LOW: 0
+WARNING: 0
+
+Need help or want to discuss the output? Join the Community https://discord.gg/eaHZBJUXRF
+
+Manage your findings directly on Bearer Cloud. Start now for free https://my.bearer.sh/users/sign_up or learn more https://docs.bearer.com/guides/bearer-cloud/
+

@@ -1,0 +1,97 @@
+
+
+Security Report
+
+=====================================
+
+Rules: 
+https://docs.bearer.com/reference/rules [v0.20.1]
+
+Language  Default Rules  Custom Rules  Files  
+
+
+HIGH: Hard-coded secret detected. [CWE-798]
+https://docs.bearer.com/reference/rules/javascript_express_hardcoded_secret
+To ignore this finding, run: bearer ignore add f045ab768c21635be8ad2e9d235592d4_0
+
+File: csrf-graphql-example-master/server/src/main.ts:74
+
+ 74             const token = jwt.sign({ email: mockUser.email }, secret);
+
+HIGH: Hardcoded secret detected [CWE-798]
+https://docs.bearer.com/reference/rules/javascript_lang_hardcoded_secret
+To ignore this finding, run: bearer ignore add e87df5b13a39e74ab69518842907fedc_0
+
+File: csrf-graphql-example-master/server/src/main.ts:12
+
+ 12 const secret = "7AoG8^%5e!ih71b:LG78j[C`:y`%#o";
+
+HIGH: Hardcoded secret detected [CWE-798]
+https://docs.bearer.com/reference/rules/javascript_lang_hardcoded_secret
+To ignore this finding, run: bearer ignore add e87df5b13a39e74ab69518842907fedc_1
+
+File: csrf-graphql-example-master/server/src/main.ts:16
+
+ 16   password: "s=69r]2Lf(n{",
+
+HIGH: Sensitive data in a JWT detected. [CWE-312]
+https://docs.bearer.com/reference/rules/javascript_lang_jwt
+To ignore this finding, run: bearer ignore add ef97b02fd7d03a406cef986410311798_0
+
+File: csrf-graphql-example-master/server/src/main.ts:74
+
+ 74             const token = jwt.sign({ email: mockUser.email }, secret);
+
+HIGH: Hardcoded JWT secret detected [CWE-798]
+https://docs.bearer.com/reference/rules/javascript_lang_jwt_hardcoded_secret
+To ignore this finding, run: bearer ignore add 15aae70a29d4302af8891a7c10a056c9_0
+
+File: csrf-graphql-example-master/server/src/main.ts:74
+
+ 74             const token = jwt.sign({ email: mockUser.email }, secret);
+
+LOW: Security misconfiguration detected (Helmet missing). [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_helmet_missing
+To ignore this finding, run: bearer ignore add 7427b3cdc1b533fbfdf3323eaa646dbb_0
+
+File: csrf-graphql-example-master/client/server.ts:4
+
+ 4 const app = express();
+
+LOW: Security misconfiguration detected (Helmet missing). [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_helmet_missing
+To ignore this finding, run: bearer ignore add e23f8d8af567230afc571928c3d562ab_0
+
+File: csrf-graphql-example-master/server/src/main.ts:10
+
+ 10 const app = express();
+
+LOW: Security misconfiguration detected (server fingerprinting). [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_reduce_fingerprint
+To ignore this finding, run: bearer ignore add 5a9fe16f000738f59144df07a82eefb1_0
+
+File: csrf-graphql-example-master/client/server.ts:4
+
+ 4 const app = express();
+
+LOW: Security misconfiguration detected (server fingerprinting). [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_reduce_fingerprint
+To ignore this finding, run: bearer ignore add 7fdd465fc175e46d6854fba205462755_0
+
+File: csrf-graphql-example-master/server/src/main.ts:10
+
+ 10 const app = express();
+=====================================
+
+72 checks, 9 findings
+
+CRITICAL: 0
+HIGH: 5 (CWE-312, CWE-798)
+MEDIUM: 0
+LOW: 4 (CWE-693)
+WARNING: 0
+
+Need help or want to discuss the output? Join the Community https://discord.gg/eaHZBJUXRF
+
+Manage your findings directly on Bearer Cloud. Start now for free https://my.bearer.sh/users/sign_up or learn more https://docs.bearer.com/guides/bearer-cloud/
+

@@ -1,0 +1,37 @@
+
+The security report is not yet available for your application.
+Learn more about language support at https://docs.bearer.com/reference/supported-languages/
+
+
+Security Report
+
+=====================================
+
+Rules: 
+https://docs.bearer.com/reference/rules [v0.20.1]
+
+Language    Default Rules  Custom Rules  Files  
+JavaScript  72             0             32     
+
+
+MEDIUM: Security misconfiguration detected (Helmet missing). [CWE-693]
+https://docs.bearer.com/reference/rules/javascript_express_helmet_missing
+To ignore this finding, run: bearer ignore add 86457672ed2d8ee4ba6388bb3c325855_0
+
+File: graphql-yoga-main/packages/nestjs/src/index.ts:84
+
+ 84     const app: Express = this.httpAdapterHost.httpAdapter.getInstance();
+=====================================
+
+72 checks, 1 findings
+
+CRITICAL: 0
+HIGH: 0
+MEDIUM: 1 (CWE-693)
+LOW: 0
+WARNING: 0
+
+Need help or want to discuss the output? Join the Community https://discord.gg/eaHZBJUXRF
+
+Manage your findings directly on Bearer Cloud. Start now for free https://my.bearer.sh/users/sign_up or learn more https://docs.bearer.com/guides/bearer-cloud/
+
