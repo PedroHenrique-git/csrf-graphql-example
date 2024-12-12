@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "csrf-example": "file:..",
-    "express": "^4.18.2",
+    "express": "^4.21.2",
     "tsx": "^3.14.0"
   },
   "devDependencies": {
